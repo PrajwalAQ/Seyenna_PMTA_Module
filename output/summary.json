@@ -1,0 +1,41 @@
+{
+  "generatedAt": "2026-10-01T19:04:19.477Z",
+  "statusCount": 258,
+  "pmtaCount": 144,
+  "mfgCount": 36,
+  "statusSheet": "Seyana Manpower list  (2)",
+  "pmtaSheet": "Manpower Planning ",
+  "mfgSheet": "1-10-26 ",
+  "mfgSheetDate": "2026-09-30",
+  "pmtaMatched": 41,
+  "mfgMatched": 23,
+  "totalMismatches": 122,
+  "categories": {
+    "PMTA: In allocation, missing from Status": 0,
+    "PMTA: In Status (PMTA dept), missing from allocation": 0,
+    "PMTA: Field mismatch": 103,
+    "MFG: In allocation, missing from Status": 0,
+    "MFG: In Status (MFU/Manufacturing), missing from allocation": 0,
+    "MFG: Field mismatch": 9,
+    "Cross: MFG allocation with Department PMTA (temp transfer)": 5,
+    "Cross: Same ID in BOTH PMTA and MFG allocations": 5,
+    "Duplicate: Employee ID within Status": 0,
+    "Duplicate: Employee ID within PMTA": 0,
+    "Duplicate: Employee ID within MFG": 0
+  },
+  "files": {
+    "status": "/var/folders/sh/9tzkbqj11v3d9vr7pblcdknm0000gn/T/seyenna_upload_sh6km4/Employee_Status.xlsx",
+    "pmta": "/var/folders/sh/9tzkbqj11v3d9vr7pblcdknm0000gn/T/seyenna_upload_sh6km4/Allocation_PMTA.xlsx",
+    "mfg": "/var/folders/sh/9tzkbqj11v3d9vr7pblcdknm0000gn/T/seyenna_upload_sh6km4/Allocation_Manufacturing.xlsx"
+  },
+  "countCheck": {
+    "bucketsCompared": 19,
+    "bucketsMatched": 11,
+    "bucketsMismatched": 8,
+    "pmtaStatusTotal": 141,
+    "pmtaAllocTotal": 144,
+    "mfuStatusTotal": 31,
+    "mfgAllocNonPmta": 31,
+    "mfgAllocTotal": 36
+  }
+}

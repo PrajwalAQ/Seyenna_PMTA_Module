@@ -1,0 +1,16 @@
+{
+  "name": "seyenna-pmta-module",
+  "version": "1.0.0",
+  "description": "Reconcile Seyenna Employee Status with daily PMTA and Manufacturing manpower allocation Excels",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node src/reconcile.js",
+    "reconcile": "node src/reconcile.js",
+    "ui": "node src/server.js",
+    "server": "node src/server.js"
+  },
+  "main": "src/reconcile.js"
+}

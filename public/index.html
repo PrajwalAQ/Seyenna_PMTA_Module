@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Seyenna Manpower Reconciler</title>
+<link rel="stylesheet" href="/static/styles.css"/>
+</head>
+<body>
+  <header>
+    <h1>Seyenna Manpower Reconciler</h1>
+    <p>Upload today’s three Excel files, then Compare. Download the HTML and Excel (XLSX) reports below.</p>
+  </header>
+
+  <main>
+    <form id="form" class="panel">
+      <div class="field">
+        <label for="status">1. Employee Status <span class="hint">Employee_Status.xlsx</span></label>
+        <input id="status" name="status" type="file" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" required/>
+      </div>
+      <div class="field">
+        <label for="pmta">2. PMTA Allocation <span class="hint">Allocation_PMTA.xlsx</span></label>
+        <input id="pmta" name="pmta" type="file" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" required/>
+      </div>
+      <div class="field">
+        <label for="mfg">3. Manufacturing Allocation <span class="hint">Allocation_Manufacturing.xlsx</span></label>
+        <input id="mfg" name="mfg" type="file" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" required/>
+      </div>
+      <div class="actions">
+        <button type="submit" id="btn">Compare</button>
+        <span id="statusMsg" class="status"></span>
+      </div>
+    </form>
+
+    <section id="summary" class="panel hidden">
+      <h2>Summary</h2>
+      <div id="cards" class="grid"></div>
+
+      <h3 class="dl-heading">Download reports</h3>
+      <div class="downloads primary">
+        <a id="dlHtml" class="btn-dl btn-html" href="/download/report.html" download="report.html">Download HTML report</a>
+        <a id="dlXlsx" class="btn-dl btn-xlsx" href="/download/report.xlsx" download="report.xlsx">Download Excel report (XLSX)</a>
+      </div>
+      <h3 class="dl-heading secondary">Also available</h3>
+      <div class="downloads secondary">
+        <a id="dlMism" href="/download/mismatches.csv" download>mismatches.csv</a>
+        <a id="dlMatch" href="/download/matches.csv" download>matches.csv</a>
+        <a id="dlSum" href="/download/summary.json" download>summary.json</a>
+        <a id="dlOpenHtml" href="/download/report.html" target="_blank" rel="noopener">Open HTML in new tab</a>
+      </div>
+    </section>
+
+    <section id="embed" class="panel hidden">
+      <h2>Report preview</h2>
+      <iframe id="reportFrame" title="Reconciliation report"></iframe>
+    </section>
+  </main>
+
+  <footer>
+    CLI: <code>node src/reconcile.js</code> · UI: <code>node src/server.js</code> → http://localhost:3847 · Node 18+ · no npm install
+  </footer>
+  <script src="/static/app.js"></script>
+</body>
+</html>
